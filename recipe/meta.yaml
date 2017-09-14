@@ -20,8 +20,9 @@ requirements:
     - python
     - setuptools
     - sphinx
-    - sphinx-bootstrap-theme
+    - sphinx_bootstrap_theme
     - six
+    - toolchain
   run:
     - python
     - six
