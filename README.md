@@ -18,9 +18,7 @@ host.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/asv-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/asv-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/asv-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/asv-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/asv-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/asv-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/asv-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/asv-feedstock)
 
 Current release info
 ====================
