@@ -1,6 +1,6 @@
 {% set name = "asv" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "f0bd3f75d20a3802139f11b8c7e7e82876d00470aef17a99acc10849414b7470" %}
+{% set version = "0.2.2" %}
+{% set sha256 = "5a1a2820f94869b5b96ea63a41c58a1d65ec4f2db812013e7d40b59c8743ac18" %}
 
 package:
   name: {{ name|lower }}
