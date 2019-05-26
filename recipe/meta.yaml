@@ -1,6 +1,6 @@
 {% set name = "asv" %}
-{% set version = "0.3.1" %}
-{% set sha256 = "82a3128cb6598a683db62aa51d74bf7dd5a48a5b357c9d0aee43ed1f92782f15" %}
+{% set version = "0.4" %}
+{% set sha256 = "d5cb333331b53e92b88bf9205d7ba6f17c89f8b270dabebfd7bcecc5f0113547" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1001
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
