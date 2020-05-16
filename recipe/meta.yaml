@@ -1,6 +1,6 @@
 {% set name = "asv" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "9dd9b97f4bebfb363a42c1ca72233a7e8428fcd12e3626e4e256151799e5038f" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "9134f56b7a2f465420f17b5bb0dee16047a70f01029c996b7ab3f197de2d0779" %}
 
 package:
   name: {{ name|lower }}
@@ -45,7 +45,7 @@ about:
   home: https://github.com/spacetelescope/asv
   license: BSD-3
   license_file: LICENSE.rst
-  summary: 'A simple Python benchmarking tool with web-based reporting'
+  summary: A simple Python benchmarking tool with web-based reporting
 
   description: |
     It is primarily designed to benchmark a single project over its lifetime
