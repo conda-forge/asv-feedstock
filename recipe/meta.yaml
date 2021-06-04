@@ -6,6 +6,7 @@ package:
   version: {{ version }}
 
 source:
+  # asv's setup.py doesn't support building dev releases without access to the git information.
   git_url: https://github.com/airspeed-velocity/asv
   git_tag: ef016e233cb9a0b19d517135104f49e0a3c380e9
 
