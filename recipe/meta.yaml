@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/airspeed-velocity/asv/archive/ef016e233cb9a0b19d517135104f49e0a3c380e9.tar.gz
-  sha256: 9200aeaa1e7e37b2e85f8c50449aec7ece1796bb477a4b5236b1f3d8a4d1d2b0
+  git_url: https://github.com/airspeed-velocity/asv
+  git_tag: ef016e233cb9a0b19d517135104f49e0a3c380e9
 
 build:
   number: 0
