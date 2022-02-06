@@ -265,13 +265,10 @@ Feedstock Maintainers
 =====================
 
 * [@CJ-Wright](https://github.com/CJ-Wright/)
-* [@alimcmaster1](https://github.com/alimcmaster1/)
 * [@datapythonista](https://github.com/datapythonista/)
 * [@jbrockmendel](https://github.com/jbrockmendel/)
 * [@mattip](https://github.com/mattip/)
-* [@mdhaber](https://github.com/mdhaber/)
 * [@mlondschien](https://github.com/mlondschien/)
-* [@pv](https://github.com/pv/)
 * [@saraedum](https://github.com/saraedum/)
 * [@xhochy](https://github.com/xhochy/)
 
