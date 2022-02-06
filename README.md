@@ -265,6 +265,9 @@ Feedstock Maintainers
 =====================
 
 * [@CJ-Wright](https://github.com/CJ-Wright/)
+* [@datapythonista](https://github.com/datapythonista/)
+* [@jbrockmendel](https://github.com/jbrockmendel/)
+* [@mattip](https://github.com/mattip/)
 * [@mlondschien](https://github.com/mlondschien/)
 * [@saraedum](https://github.com/saraedum/)
 * [@xhochy](https://github.com/xhochy/)
