@@ -1,5 +1,5 @@
 {% set name = "asv" %}
-{% set version = "0.5" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7d84a09c244a28ccb0cd91739f3584087389efd301c81e1c91727b3a3f195afb
+  sha256: 805fc3cc46c0bcf3e7baeaa16a12e4b92f1276c25490db4cb80fc541afa52bfc
 
 build:
   number: 0
@@ -62,9 +62,6 @@ extra:
     - saraedum
     - xhochy
     - mlondschien
-    - pv
     - mattip
-    - mdhaber
     - jbrockmendel
-    - alimcmaster1
     - datapythonista
