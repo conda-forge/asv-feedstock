@@ -1,11 +1,11 @@
-About asv
-=========
+About asv-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asv-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/airspeed-velocity/asv
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asv-feedstock/blob/main/LICENSE.txt)
 
 Summary: A simple Python benchmarking tool with web-based reporting
 
@@ -404,11 +404,11 @@ Feedstock Maintainers
 =====================
 
 * [@CJ-Wright](https://github.com/CJ-Wright/)
+* [@HaoZeke](https://github.com/HaoZeke/)
 * [@datapythonista](https://github.com/datapythonista/)
 * [@jbrockmendel](https://github.com/jbrockmendel/)
 * [@mattip](https://github.com/mattip/)
 * [@mlondschien](https://github.com/mlondschien/)
 * [@saraedum](https://github.com/saraedum/)
 * [@xhochy](https://github.com/xhochy/)
-* [@HaoZeke](https://github.com/HaoZeke/)
 
