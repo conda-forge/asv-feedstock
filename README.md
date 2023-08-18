@@ -1,7 +1,7 @@
 About asv
 =========
 
-Home: https://github.com/spacetelescope/asv
+Home: https://github.com/airspeed-velocity/asv
 
 Package license: BSD-3-Clause
 
@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asv-feedstock/b
 
 Summary: A simple Python benchmarking tool with web-based reporting
 
-Development: https://github.com/spacetelescope/asv
+Development: https://github.com/airspeed-velocity/asv
 
 Documentation: http://asv.readthedocs.io/en/latest/index.html
 

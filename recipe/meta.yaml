@@ -43,7 +43,7 @@ test:
 #    - py.test
 
 about:
-  home: https://github.com/spacetelescope/asv
+  home: https://github.com/airspeed-velocity/asv
   license: BSD-3-Clause
   license_file: LICENSE.rst
   summary: A simple Python benchmarking tool with web-based reporting
@@ -54,7 +54,7 @@ about:
     interactive web frontend that requires only a basic static webserver to
     host.
   doc_url: http://asv.readthedocs.io/en/latest/index.html
-  dev_url: https://github.com/spacetelescope/asv
+  dev_url: https://github.com/airspeed-velocity/asv
 
 extra:
   recipe-maintainers:
