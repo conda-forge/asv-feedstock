@@ -410,4 +410,5 @@ Feedstock Maintainers
 * [@mlondschien](https://github.com/mlondschien/)
 * [@saraedum](https://github.com/saraedum/)
 * [@xhochy](https://github.com/xhochy/)
+* [@HaoZeke](https://github.com/HaoZeke/)
 
