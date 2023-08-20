@@ -17,22 +17,20 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pip
-    - setuptools >=61.2
-    - setuptools_scm[toml] >=6.2
-    - wheel
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
+    - setuptools >=61.2
+    - setuptools_scm >=6.2
+    - wheel
   run:
     - python
-    - pip
     - asv_runner
     - json5
     - tabulate
-    - colorama  # [os_name == 'nt']
+    - colorama  # [win]
     - pyyaml  # [platform_python_implementation != "PyPy"]
     - pympler  # [platform_python_implementation != "PyPy"]
 
