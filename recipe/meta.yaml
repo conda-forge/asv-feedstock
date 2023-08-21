@@ -39,6 +39,17 @@ test:
     - asv
   requires:
     - pytest
+    - pytest-rerunfailures
+    - pytest-timeout
+    - pytest-xdist
+    - feedparser
+    - filelock
+    - numpy *
+    # - python-hglib
+    - rpy2          # [python_impl != "pypy"]
+    - scipy         # [python_impl != "pypy"]
+    - selenium
+    - virtualenv
   source_files:
     - test/
   commands:
