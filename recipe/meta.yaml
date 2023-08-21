@@ -37,13 +37,12 @@ requirements:
 test:
   imports:
     - asv
-#  requires:
-#    - pytest
-#  files:
-#    - {{ SRC_DIR }}/test/
-#  commands:
-#    - cd {{ SRC_DIR }}/test/
-#    - py.test
+  requires:
+    - pytest
+  source_files:
+    - test/
+  commands:
+    - pytest -v test
 
 about:
   home: https://github.com/airspeed-velocity/asv
