@@ -37,13 +37,27 @@ requirements:
 test:
   imports:
     - asv
-#  requires:
-#    - pytest
-#  files:
-#    - {{ SRC_DIR }}/test/
-#  commands:
-#    - cd {{ SRC_DIR }}/test/
-#    - py.test
+  requires:
+    - pytest
+    - pytest-rerunfailures
+    - pytest-timeout
+    - pytest-xdist
+    - feedparser
+    - filelock
+    - git
+    - mamba
+    - numpy *
+    - pip
+    # - python-hglib
+    - rpy2          # [python_impl != "pypy"]
+    - scipy         # [python_impl != "pypy"]
+    - selenium
+    - virtualenv
+    - wheel
+  source_files:
+    - test/
+  commands:
+    - pytest -v test
 
 about:
   home: https://github.com/airspeed-velocity/asv
