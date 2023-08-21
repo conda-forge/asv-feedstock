@@ -1,5 +1,5 @@
 {% set name = "asv" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 805fc3cc46c0bcf3e7baeaa16a12e4b92f1276c25490db4cb80fc541afa52bfc
+  sha256: 9afce3008094209b7e87b7b880bc6b8f2da303fdc6dd665c7be9f1057ecd5753
 
 build:
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,14 +22,17 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
-    - sphinx
-    - sphinx_bootstrap_theme
-    - six
+    - setuptools >=61.2
+    - setuptools_scm >=6.2
+    - wheel
   run:
     - python
-    - setuptools
-    - six
+    - asv_runner >=0.0.9
+    - json5
+    - tabulate
+    - colorama  # [win]
+    - pyyaml    # [python_impl != "pypy"]
+    - pympler   # [python_impl != "pypy"]
 
 test:
   imports:
