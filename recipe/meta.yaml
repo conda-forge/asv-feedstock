@@ -44,12 +44,16 @@ test:
     - pytest-xdist
     - feedparser
     - filelock
+    - git
+    - mamba
     - numpy *
+    - pip
     # - python-hglib
     - rpy2          # [python_impl != "pypy"]
     - scipy         # [python_impl != "pypy"]
     - selenium
     - virtualenv
+    - wheel
   source_files:
     - test/
   commands:
