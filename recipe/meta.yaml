@@ -22,13 +22,15 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=61.2
+    - setuptools >=64
     - setuptools_scm >=6.2
     - wheel
   run:
     - python
-    - asv_runner >=0.0.9
+    - asv_runner >=0.2.1
     - json5
+    - virtualenv
+    - tomli
     - tabulate
     - colorama  # [win]
     - pyyaml    # [python_impl != "pypy"]
@@ -37,11 +39,14 @@ requirements:
 test:
   imports:
     - asv
-#  requires:
+  requires:
+    - pip
 #    - pytest
 #  files:
 #    - {{ SRC_DIR }}/test/
-#  commands:
+  commands:
+    - pip check
+    - asv --help
 #    - cd {{ SRC_DIR }}/test/
 #    - py.test
 
