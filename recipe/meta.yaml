@@ -41,14 +41,9 @@ test:
     - asv
   requires:
     - pip
-#    - pytest
-#  files:
-#    - {{ SRC_DIR }}/test/
   commands:
     - pip check
     - asv --help
-#    - cd {{ SRC_DIR }}/test/
-#    - py.test
 
 about:
   home: https://github.com/airspeed-velocity/asv
