@@ -8,12 +8,12 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 141a7fa6e90d63e39db6314e6ea6b7c5b81dfd7556dd03723ff43ede9688965b
+  patches:
+    - 0001-Only-install-asv-sources.patch
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  patches:
-    - 0001-Only-install-asv-sources.patch
 
 requirements:
   build:
