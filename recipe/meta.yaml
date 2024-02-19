@@ -35,6 +35,7 @@ requirements:
     - virtualenv
     - tomli
     - tabulate
+    - libmambapy
     - colorama  # [win]
     - pyyaml    # [python_impl != "pypy"]
     - pympler   # [python_impl != "pypy"]
