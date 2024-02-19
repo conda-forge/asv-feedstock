@@ -48,6 +48,7 @@ test:
     - libmambapy
   commands:
     - pip check
+    - dir "%CONDA_PREFIX%\Scripts"
     - asv --help
     - echo 1
 
