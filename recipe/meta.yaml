@@ -11,8 +11,9 @@ source:
 
 build:
   number: 0
-  skip: true  # [not (win and py==39)]
   script: {{ PYTHON }} -m pip install . -vv
+  patches:
+    - 0001-Only-install-asv-sources.patch
 
 requirements:
   build:
@@ -23,19 +24,16 @@ requirements:
   host:
     - python
     - pip
-    - python-build
     - setuptools >=64
     - setuptools_scm >=6.2
     - wheel
   run:
     - python
-    - python-build
     - asv_runner >=0.2.1
     - json5
     - virtualenv
     - tomli
     - tabulate
-    - libmambapy
     - colorama  # [win]
     - pyyaml    # [python_impl != "pypy"]
     - pympler   # [python_impl != "pypy"]
@@ -45,12 +43,10 @@ test:
     - asv
   requires:
     - pip
-    - libmambapy
   commands:
     - pip check
-    - dir "%CONDA_PREFIX%\Scripts"
+    - python -m asv --help
     - asv --help
-    - echo 1
 
 about:
   home: https://github.com/airspeed-velocity/asv
