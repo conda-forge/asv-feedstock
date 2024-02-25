@@ -1,5 +1,5 @@
 {% set name = "asv" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4eaf7b2ff825d841c819b15de8753d10dc0cc5da4082dc3e0de2707fc71d7ea4
+  sha256: 6fec11fc34222019d9f1b33ab93f2728113e6b494051ffe4bfbf2fced346d35c
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
