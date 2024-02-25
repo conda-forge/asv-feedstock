@@ -27,9 +27,11 @@ requirements:
     - wheel
   run:
     - python
-    - asv_runner >=0.0.9
+    - asv_runner >=0.2.1
     - json5
     - tabulate
+    - virtualenv
+    - tomli
     - colorama  # [win]
     - pyyaml    # [python_impl != "pypy"]
     - pympler   # [python_impl != "pypy"]
