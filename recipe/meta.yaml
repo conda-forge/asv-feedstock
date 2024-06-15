@@ -8,9 +8,14 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 6fec11fc34222019d9f1b33ab93f2728113e6b494051ffe4bfbf2fced346d35c
+  patches:
+    # https://github.com/airspeed-velocity/asv/pull/1407
+    # https://github.com/airspeed-velocity/asv/issues/1406
+    # https://github.com/conda-forge/asv-feedstock/issues/42
+    - 1407-do-no-install-extra-dis.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
