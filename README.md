@@ -419,6 +419,3 @@ Feedstock Maintainers
 * [@saraedum](https://github.com/saraedum/)
 * [@xhochy](https://github.com/xhochy/)
 
-
-<!-- dummy commit to enable rerendering -->
-
