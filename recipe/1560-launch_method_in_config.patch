@@ -1,0 +1,61 @@
+From ee947ecabab063dc0e2af20fdfb3f04036c48475 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 24 Nov 2025 21:29:32 -0500
+Subject: [PATCH] Allow users to specify the launch_method in the config
+
+We find that with cupy at least, we are unable to allocate GPU memory
+without setting the method to spawn.
+
+This is easy to forget to specify, and thus creates all these problems
+for us when we run longer benchmarks
+
+Thanks for considering!
+---
+ asv/commands/run.py        | 6 ++++++
+ asv/config.py              | 1 +
+ asv/template/asv.conf.json | 5 +++++
+ 3 files changed, 12 insertions(+)
+
+diff --git a/asv/commands/run.py b/asv/commands/run.py
+index cc9b6407d..ae1ebdda9 100644
+--- a/asv/commands/run.py
++++ b/asv/commands/run.py
+@@ -436,6 +436,12 @@ def run(
+         else:
+             run_round_set = [None]
+ 
++        if launch_method is None:
++            # Allow the users to set the launch_method by the command line argument
++            # if they didn't set it, use the one in the config
++            # and then ultimately default to 'auto' if not set in the config
++            launch_method = conf.launch_method or 'auto'
++
+         def iter_rounds_commits():
+             for run_rounds in run_round_set:
+                 if interleave_rounds and run_rounds[0] % 2 == 0:
+diff --git a/asv/config.py b/asv/config.py
+index 5976ba95f..c8822dd59 100644
+--- a/asv/config.py
++++ b/asv/config.py
+@@ -72,6 +72,7 @@ def __init__(self):
+         self.build_command = None
+         self.install_command = None
+         self.uninstall_command = None
++        self.launch_method = None
+ 
+     @classmethod
+     def load(cls, path=None):
+diff --git a/asv/template/asv.conf.json b/asv/template/asv.conf.json
+index 3125ab077..dccac3f3e 100644
+--- a/asv/template/asv.conf.json
++++ b/asv/template/asv.conf.json
+@@ -191,4 +191,9 @@
+     //    "some_benchmark": 0.01,     // Threshold of 1%
+     //    "another_benchmark": 0.5,   // Threshold of 50%
+     // },
++
++    // launch_method:
++    // How to launch benchmarks. Choices: auto, spawn, forkserver
++    // This parameter may be overwritten by command line arguments
++    // "launch_method": "auto",
+ }
