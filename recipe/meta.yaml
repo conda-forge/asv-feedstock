@@ -8,9 +8,13 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a8eeb7c5037cd78c146bd727d27203132438d4d62f36e669eb0cd5d63da0cf39
+  patches:
+    - 1558-correctly-formed-conda-requirements.patch
+    - 1559-correct_units_meminfo.patch
+    - 1560-launch_method_in_config.patch
 
 build:
-  number: 0
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:

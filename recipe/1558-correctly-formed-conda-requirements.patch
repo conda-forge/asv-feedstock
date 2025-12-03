@@ -1,0 +1,52 @@
+From 41149b4f8580f9df553460294a3e13cf66f4f2bd Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 24 Nov 2025 16:13:09 -0500
+Subject: [PATCH] Fix pip requirement building in new environments
+
+By default it seems that:
+
+- pip+build
+- pip+asv_runner
+- pip+pympler
+
+make it to the requirements of building your conda environment
+
+Without this PR, the command gets executed and adds things like like a
+bogus environment.yml (temporary only) that looks lik
+
+```
+name: conda-py3.12
+channels:
+   - conda-forge
+```
+
+but this causes conda to error since there are no requirements for the
+"update".
+
+We can debate as to whether or not these "pip dependencies" should be
+converted to conda ones, but lets leave that debate for later. This
+helps people run "asv setup"
+---
+ asv/plugins/conda.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/asv/plugins/conda.py b/asv/plugins/conda.py
+index b94487150..83bcf6576 100644
+--- a/asv/plugins/conda.py
++++ b/asv/plugins/conda.py
+@@ -144,10 +144,14 @@ def _setup(self):
+         try:
+             env_file.write(f'name: {self.name}\nchannels:\n')
+             env_file.writelines(f'   - {ch}\n' for ch in self._conda_channels)
+-            if conda_args:
++            if conda_args or pip_args:
+                 env_file.write('dependencies:\n')
++            if conda_args:
+                 # categorize & write dependencies based on pip vs. conda
+                 env_file.writelines(f'   - {s}\n' for s in conda_args)
++            if pip_args:
++                env_file.write('   - pip:\n')
++                env_file.writelines(f'      - {s}\n' for s in pip_args)
+             env_file.close()
+             try:
+                 env_file_name = self._conda_environment_file or env_file.name

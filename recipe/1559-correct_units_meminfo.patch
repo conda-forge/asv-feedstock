@@ -1,0 +1,28 @@
+From 3341d01275ccc50fbcb0f529682f852a2f35c0bd Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 24 Nov 2025 21:06:46 -0500
+Subject: [PATCH] Memroy from meminfo is reported in kB not B
+
+Now the users get even less readable suggestions, but they are at least
+correct!
+---
+ asv/util.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/asv/util.py b/asv/util.py
+index 6cd2c1d50..e08c6bf2a 100644
+--- a/asv/util.py
++++ b/asv/util.py
+@@ -898,7 +898,11 @@ def get_memsize():
+                 key = key.strip()
+                 val = val.strip()
+                 if key == b'MemTotal':
+-                    return int(val.split()[0])
++                    if val.endswith(b' kB'):
++                        units = 1024
++                    else:
++                        units = 1
++                    return int(val.split()[0]) * units
+     elif sys.platform.startswith('darwin'):
+         sysctl = which('sysctl')
+         return int(check_output([sysctl, '-n', 'hw.memsize']).strip())
