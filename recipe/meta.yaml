@@ -9,12 +9,17 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a8eeb7c5037cd78c146bd727d27203132438d4d62f36e669eb0cd5d63da0cf39
   patches:
+    # https://github.com/airspeed-velocity/asv/pull/1558
     - 1558-correctly-formed-conda-requirements.patch
+    # https://github.com/airspeed-velocity/asv/pull/1559
     - 1559-correct_units_meminfo.patch
+    # https://github.com/airspeed-velocity/asv/pull/1560
     - 1560-launch_method_in_config.patch
+    # https://github.com/airspeed-velocity/asv/pull/1565
+    - 1565-fix-usage-of-launch-method-config.patch
 
 build:
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
