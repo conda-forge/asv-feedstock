@@ -11,6 +11,8 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 82e47105db8f56d9b1e54763dd01a1709d2722ad2f727b21521628c3e110bdc6
+  patches:
+    - 0001-Py_MOD_GIL_NOT_USED.patch
 
 build:
   number: 4
