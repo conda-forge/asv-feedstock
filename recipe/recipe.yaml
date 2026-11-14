@@ -1,0 +1,86 @@
+schema_version: 1
+
+context:
+  name: asv
+  version: "0.6.6"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 82e47105db8f56d9b1e54763dd01a1709d2722ad2f727b21521628c3e110bdc6
+
+build:
+  number: 4
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+    - setuptools >=61.2
+    - setuptools_scm >=6.2
+    - wheel
+  run:
+    - python
+    - asv_runner >=0.2.5
+    - json5
+    - python-build
+    - tabulate
+    - virtualenv
+    - packaging
+    - importlib-metadata
+    - if: match(python, "<3.11")
+      then: tomli
+    - if: win
+      then: colorama
+    - if: python_impl != "pypy"
+      then: pyyaml
+    - if: python_impl != "pypy"
+      then: pympler
+
+tests:
+  - python:
+      imports:
+        - asv
+      pip_check: true
+  - requirements:
+      run:
+        - pip
+    script:
+      - python -c "from importlib.metadata import version; print('asv-runner', version('asv-runner'))"
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.rst
+  summary: A simple Python benchmarking tool with web-based reporting
+  description: |
+    It is primarily designed to benchmark a single project over its lifetime
+    using a given suite of benchmarks. The results are displayed in an
+    interactive web frontend that requires only a basic static webserver to
+    host.
+  homepage: https://github.com/airspeed-velocity/asv
+  repository: https://github.com/airspeed-velocity/asv
+  documentation: http://asv.readthedocs.io/en/latest/index.html
+
+extra:
+  recipe-maintainers:
+    - CJ-Wright
+    - saraedum
+    - xhochy
+    - mlondschien
+    - mattip
+    - jbrockmendel
+    - datapythonista
+    - HaoZeke
+
